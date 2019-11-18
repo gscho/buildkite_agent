@@ -1,4 +1,10 @@
 # buildkite_agent
 
-TODO: Enter the cookbook description here.
+### Usage
+
+```
+node.default['buildkite_agent']['token'] = "mytoken"
+
+include_recipe 'buildkite_agent'
+```
 
