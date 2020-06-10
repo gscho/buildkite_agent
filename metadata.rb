@@ -3,7 +3,7 @@ maintainer 'Greg Schofield'
 maintainer_email 'greg.c.schofield@gmail.com'
 license 'MIT'
 description 'Installs and configures a buildkite agent'
-version '0.1.0'
+version '0.1.1'
 chef_version '>= 14.0'
 
 issues_url 'https://github.com/gscho/buildkite_agent/issues'
