@@ -14,4 +14,3 @@ end
 apt_update
 
 include_recipe '::_configure'
-

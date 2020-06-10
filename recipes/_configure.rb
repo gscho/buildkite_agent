@@ -11,13 +11,13 @@ agent_conf = '/etc/buildkite-agent/buildkite-agent.cfg'
 ruby_block 'set agent token' do
   block do
     file_edit = Chef::Util::FileEdit.new(agent_conf)
-    file_edit.search_file_replace_line(/token=\"xxx\"/,"token=\"#{node['buildkite_agent']['token']}\"")
+    file_edit.search_file_replace_line(/token=\"xxx\"/, "token=\"#{node['buildkite_agent']['token']}\"")
     file_edit.write_file
   end
-  only_if {::File.exist?(agent_conf)}
-  not_if {::File.readlines(agent_conf).grep(/#{Regexp.quote(node['buildkite_agent']['token'])}/).any?}
+  only_if { ::File.exist?(agent_conf) }
+  not_if { ::File.readlines(agent_conf).grep(/#{Regexp.quote(node['buildkite_agent']['token'])}/).any? }
 end
 
 service 'buildkite-agent' do
-  action %i[enable start]
+  action %i(enable start)
 end

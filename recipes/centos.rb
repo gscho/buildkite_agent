@@ -11,5 +11,3 @@ yum_repository 'Buildkite Pty Ltd' do
 end
 
 include_recipe '::_configure'
-
-
